@@ -33,6 +33,15 @@ h1 {
   margin: 5px;
   width: 300px;
   border: 1px solid black;
+  color: black;
+  text-decoration: none;
+}
+
+.detailsContainer {
+
+}
+.background-image {
+  width: 500px;
 }
 
 .error {

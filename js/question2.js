@@ -20,15 +20,15 @@ async function getGames() {
       const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(getDate)
       const dateReleased = `${mo} ${da}, ${ye}`;
 
-      resultsContainer.innerHTML += `<div class="result" id=${gameId}>
+      resultsContainer.innerHTML += `<a href="./question3.html" class="result" id=${gameId}>
       <h2>${gameName}</h2>
       <p><strong>Date released:</strong> ${dateReleased}</p>
       <p><strong>Rating:</strong> ${rating}</p>
-      </div>`
+      </a>`
     });
     }
     catch(error) {
-    resultsContainer.innerHTML = displayError("An error occured when calling API")
+    resultsContainer.innerHTML = displayError("An error occured when calling API");
   }
 }
 
