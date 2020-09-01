@@ -8,24 +8,8 @@ async function getGames() {
     const data = await response.json();
     const allGames = data.results;
     
-    resultsContainer.innerHTML = "";
-
-    allGames.forEach(game => {
-      const gameName = game.name;
-      const rating = game.rating;
-      const gameId = game.id;
-      let getDate = new Date(game.released);
-      const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(getDate)
-      const mo = new Intl.DateTimeFormat('en', { month: 'long' }).format(getDate)
-      const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(getDate)
-      const dateReleased = `${mo} ${da}, ${ye}`;
-
-      resultsContainer.innerHTML += `<a href="./question3.html" class="result" id=${gameId}>
-      <h2>${gameName}</h2>
-      <p><strong>Date released:</strong> ${dateReleased}</p>
-      <p><strong>Rating:</strong> ${rating}</p>
-      </a>`
-    });
+    createGamesHtml(allGames)
+    
     }
     catch(error) {
     resultsContainer.innerHTML = displayError("An error occured when calling API");
@@ -33,3 +17,23 @@ async function getGames() {
 }
 
 getGames()
+
+
+function createGamesHtml(allGames) {
+  allGames.forEach(game => {
+    const gameName = game.name;
+    const rating = game.rating;
+    const gameId = game.id;
+    let getDate = new Date(game.released);
+    const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(getDate)
+    const mo = new Intl.DateTimeFormat('en', { month: 'long' }).format(getDate)
+    const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(getDate)
+    const dateReleased = `${mo} ${da}, ${ye}`;
+
+    resultsContainer.innerHTML += `<a href="./question3.html?id=${gameId}" class="result">
+    <h2>${gameName}</h2>
+    <p><strong>Date released:</strong> ${dateReleased}</p>
+    <p><strong>Rating:</strong> ${rating}</p>
+    </a>`
+  });
+}

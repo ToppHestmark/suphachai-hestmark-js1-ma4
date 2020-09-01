@@ -4,10 +4,10 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const url = "https://api.rawg.io/api/games/30713";
+const url = "https://api.rawg.io/api/games/" + id;
 
 
-async function getGame() {
+async function getDetails() {
 
   try {
     const response = await fetch(url);
@@ -16,7 +16,7 @@ async function getGame() {
     console.log(details)
 
     detailsContainer.innerHTML = `
-    <h1>${details.name}</h1>
+    <h2>${details.name}</h2>
     <img class="background-image" src="${details.background_image}" alt="${details.name}">
     <div>${details.description}</div>
     <time class="details-date">${details.released}</time>
@@ -27,4 +27,4 @@ async function getGame() {
   }
 }
 
-getGame()
+getDetails()
