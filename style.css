@@ -1,3 +1,40 @@
+@import url("https://use.typekit.net/ira7wdv.css");
+@import url("https://use.typekit.net/ira7wdv.css");
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: refrigerator-deluxe, sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: gill-sans-nova-inline, sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.resultsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.result {
+  padding: 20px;
+  margin: 5px;
+  width: 300px;
+  border: 1px solid black;
+}
+
 .error {
   color: red;
   display: none;
