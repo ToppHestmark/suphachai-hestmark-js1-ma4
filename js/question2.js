@@ -10,12 +10,11 @@ async function getGames() {
     
     resultsContainer.innerHTML = "";
 
-    for (let i = 0; i < allGames.length; i++) {
-
-      const gameName = allGames[i].name;
-      const rating = allGames[i].rating;
-      const gameId = allGames[i].id;
-      let getDate = new Date(allGames[i].released);
+    allGames.forEach(game => {
+      const gameName = game.name;
+      const rating = game.rating;
+      const gameId = game.id;
+      let getDate = new Date(game.released);
       const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(getDate)
       const mo = new Intl.DateTimeFormat('en', { month: 'long' }).format(getDate)
       const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(getDate)
@@ -26,7 +25,7 @@ async function getGames() {
       <p><strong>Date released:</strong> ${dateReleased}</p>
       <p><strong>Rating:</strong> ${rating}</p>
       </div>`
-    }
+    });
     }
     catch(error) {
     resultsContainer.innerHTML = displayError("An error occured when calling API")
