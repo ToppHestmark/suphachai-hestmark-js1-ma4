@@ -8,9 +8,32 @@
   box-sizing: border-box;
 }
 
+.form_container {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  height: 80px;
+}
+
+#contactForm input {
+  width: 300px;
+  height: 30px;
+}
+
+#contactForm button {
+  margin-top: 10px;
+  height: 30px;
+  width: 60px;
+  font-weight: 800;
+  background-color: #546de5;
+  border: none;
+}
+
 h1 {
+  padding: 20px;
   font-family: gill-sans-nova-inline, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
+  color: #1e272e;
   font-size: 4rem;
   text-align: center;
 }
@@ -32,9 +55,10 @@ h1 {
   padding: 20px;
   margin: 5px;
   width: 300px;
-  border: 1px solid black;
-  color: black;
+  color: #1e272e;
+  background-color: #778beb;
   text-decoration: none;
+  border: none;
 }
 
 .detailsContainer {
